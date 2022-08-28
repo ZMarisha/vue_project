@@ -6,7 +6,9 @@
     <button @click="getDiffOperrands">-</button>
     <button @click="getResultDevidion">/</button>
     <button @click="getProductOperands">*</button>
-    <p>Result: {{ result }}</p>
+    <button @click="getResultExponentiationOperands">**</button>
+    <button @click="getResultIntegerDivision">Math.trunc</button>
+    <p class="result">Result: {{ result }}</p>
   </div>
 </template>
 
@@ -30,6 +32,12 @@ export default {
     },
     getResultDevidion () {
       this.result = this.operand1 / this.operand2
+    },
+    getResultExponentiationOperands () {
+      this.result = Math.pow(this.operand1, this.operand2)
+    },
+    getResultIntegerDivision () {
+      this.result = Math.trunc(this.operand1 / this.operand2)
     }
   }
 }
@@ -50,5 +58,10 @@ li {
 }
 a {
   color: #42b983;
+}
+.result {
+  color: green;
+  font-weight: 600;
+  font-size: 24px;
 }
 </style>
